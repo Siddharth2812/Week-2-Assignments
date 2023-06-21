@@ -21,5 +21,14 @@ const fs = require('fs');
 const path = require('path');
 const app = express();
 
+function filesList(err, data,req,res){
+  var dataObj = {
+    files: filesList
+  }
+  res.json(dataObj)
+}
 
+fs.readdir("./files", filesList)
+
+app.get("/files", filesList)
 module.exports = app;
